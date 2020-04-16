@@ -1,0 +1,8 @@
+*.log
+.idea/
+.archivos/*
+./config/conf.php
+*.jpeg
+*.jpg
+*.png
+*.pdf

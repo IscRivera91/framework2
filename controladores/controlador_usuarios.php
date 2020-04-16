@@ -1,0 +1,82 @@
+<?php
+/*** controlador core ***/
+
+class controlador_usuarios extends controlador{
+
+    public $grupos = array();
+    public $grupo_modelo;
+
+    public function __construct(database $link){
+
+        parent::__construct($link,'usuarios');
+
+        $this->configuracion();
+    }
+
+    private function configuracion(){
+
+        $this->grupo_modelo = new grupos($this->link);
+
+        $this->grupos = $this->grupo_modelo->filtro_and(array('status'=>'activo'),
+            array('id','descripcion_grupo'))['registros'];
+
+        $this->valida_campos_unicos = array(
+            'nombre' => 'nombre_completo',
+            'correo' => 'email',
+            'usuario' => 'user'
+        );
+
+    }// end configuracion
+
+    public function alta(){
+
+        $this->inputs[] = $this->HTML->input('Nombre','nombre_completo',4,
+            'Nombre');
+
+        $this->inputs[] = $this->HTML->input('Correo','email',4,'Correo');
+
+        $this->inputs[] = $this->HTML->input('Usuario','user',4,'Usuario');
+
+        $this->inputs[] = $this->HTML->input('Contraseña','password',4,
+            'Contraseña');
+
+        $this->inputs[] = $this->HTML->select('Tipo Usuario','grupo_id',
+            4,$this->grupos,'descripcion_grupo');
+
+        $this->inputs[] = $this->HTML->submit('Registrar','usuarios_alta_bd',4);
+
+    }// end alta
+
+    public function modifica(){
+        parent::modifica();
+        $this->inputs[] = $this->HTML->input('Nombre','nombre_completo',4,
+            'Nombre',$this->registro['nombre_completo']);
+
+        $this->inputs[] = $this->HTML->input('Correo','email',4,'Correo',
+            $this->registro['email']);
+
+        $this->inputs[] = $this->HTML->input('Usuario','user',4,'Usuario',
+            $this->registro['user']);
+
+        $this->inputs[] = $this->HTML->input('Contraseña','password',4,
+            'Contraseña',$this->registro['password']);
+
+        $this->inputs[] = $this->HTML->select('Tipo Usuario','grupo_id',
+            4,$this->grupos,'descripcion_grupo',$this->registro['grupo_id']);
+
+        $this->inputs[] = $this->HTML->submit('Modificar','usuarios_modifica_bd',4);
+    }// end modifica
+
+    public function lista(){
+
+        $this->nombre_columnas_lista = array('ID','Nombre','Usuario','Correo','Tipo Usuario','Estatus');
+        $this->columnas_lista = array('usuarios.id','nombre_completo','user','email','grupos.descripcion_grupo',
+            'usuarios.status');
+        $this->joins_lista = ' LEFT JOIN grupos ON usuarios.grupo_id = grupos.id ';
+
+        parent::lista();
+
+    }// end lista
+
+
+}
