@@ -6,7 +6,6 @@
     define('RUTA_ADMINLTE',RUTA_PROYECTO.'template/adminlte/');
     define('RUTA_FONT',RUTA_PROYECTO.'template/font-awesome/');
 
-    define('CSM','csm');
     // COLORES
     define('BTNCOLOR', 'btn-default');
     define('ALERTCOLORLOGIN','alert-success');
