@@ -24,7 +24,7 @@
                         <a><?php echo NOMBRE_USUARIO ?></a>
                     </li>
                     <li>
-                        <a href="<?php echo get_url('session','login_off',SESSION_ID); ?>" >Salir <i class="fa fa-power-off"></i></a>
+                        <a <?php echo COLORBASE; ?> href="<?php echo get_url('session','login_off',SESSION_ID); ?>" >Salir <i class="fa fa-power-off"></i></a>
                     </li>
                 </ul>
             </div>

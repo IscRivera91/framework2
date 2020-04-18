@@ -18,7 +18,7 @@ $inputs = $controlador->inputs_filtro_lista;
 
     ?>
 <div style="background-color: white; border-radius: 10px " class="table-responsive">
-    <table class="table">
+    <table class="table table-hover">
 
         <tbody>
         <?php if (count($registros) > 0) { ?>
@@ -55,7 +55,7 @@ $inputs = $controlador->inputs_filtro_lista;
                     <td>
                         <p class="text-center">
                             <?php foreach ($acciones as $accion): ?>
-                                <a title="<?php echo $accion['label'] ?>" href="<?php echo get_url($accion['controlador'],
+                                <a <?php echo COLORBASE; ?> title="<?php echo $accion['label'] ?>" href="<?php echo get_url($accion['controlador'],
                                     $accion['metodo'],SESSION_ID,'',
                                     $registro['id']) ?>"><i class="<?php echo $accion['icon'] ?>"></i></a>
                             <?php endforeach; ?>
@@ -68,7 +68,7 @@ $inputs = $controlador->inputs_filtro_lista;
 
         <?php }else{ ?>
             <td align="center">
-                <span class="glyphicon glyphicon-remove"></span> no existen registros
+                <span <?php echo COLORBASE; ?> class="fas fa-times"></span> no existen registros
             </td>
         <?php } // end if count ?>
         </tbody>

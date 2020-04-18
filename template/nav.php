@@ -14,7 +14,7 @@
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
       <li class="nav-item" >
-        <a style="color:#000000;" href="<?php echo get_url('session','login_off',SESSION_ID); ?>" >Salir <i class="fas fa-power-off"></i></a>
+        <a <?php echo COLORBASE; ?> href="<?php echo get_url('session','login_off',SESSION_ID); ?>" >Salir <i class="fas fa-power-off"></i></a>
       </li>
     </ul>
   </nav>
