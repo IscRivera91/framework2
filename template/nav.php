@@ -1,33 +1,21 @@
-<body class="hold-transition skin-black-light sidebar-mini">
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
 <div class="wrapper">
-    <header class="main-header">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
 
-        <!-- Logo -->
-        <a href="<?php echo get_url('inicio','index',SESSION_ID); ?>" class="logo">
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><?= NOMBRE_PROYECTO ?></span>
-        </a>
-
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-            </a>
-
-
-            <!-- Navbar Right Menu -->
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                    <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a><?php echo NOMBRE_USUARIO ?></a>
-                    </li>
-                    <li>
-                        <a href="<?php echo get_url('session','login_off',SESSION_ID); ?>" >Salir <i class="fa fa-power-off"></i></a>
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-    </header>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item" >
+        <a style="color:#000000;" href="<?php echo get_url('session','login_off',SESSION_ID); ?>" >Salir <i class="fas fa-power-off"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->

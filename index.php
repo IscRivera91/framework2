@@ -178,11 +178,24 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="<?php echo RUTA_BOOTSTRAP ?>js/jquery.min.js"></script>
-<script src="<?php echo RUTA_BOOTSTRAP ?>js/bootstrap.min.js"></script>
-<script src="<?php echo RUTA_ADMINLTE ?>js/adminlte.min.js"></script>
-<script src="<?php echo RUTA_BOOTSTRAP ?>js/select2.full.min.js"></script>
-<script src="<?php echo RUTA_PROYECTO ?>views/JS/1base.js"></script>
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/jquery/jquery.min.js"></script>
+<!-- Select2 -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3//moment/moment.min.js"></script>
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/dist/js/adminlte.min.js"></script>
 <?php
 $js = 'views/JS/'.CONTROLADOR.'.'.METODO.'.js';
 if (file_exists($js)){?><script src="<?php echo RUTA_PROYECTO.$js ?>"></script>">
@@ -190,9 +203,15 @@ if (file_exists($js)){?><script src="<?php echo RUTA_PROYECTO.$js ?>"></script>"
 
 <script>
     $(function () {
+
         //Initialize Select2 Elements
         $('.select2').select2();
-    })
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+        theme: 'bootstrap4'
+        });
+    });
 </script>
 </body>
 </html>
