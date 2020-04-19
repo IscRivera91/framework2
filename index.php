@@ -168,11 +168,11 @@
 
 
     <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.0.0
-        </div>
-        <strong>Copyright &copy; 2019 R-Rivera . </strong>todos los derechos reservados.
-    </footer>
+    <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.0.0
+    </div>
+    <strong>Copyright © 2020 Ing Rivera . </strong>todos los derechos reservados.
+  </footer>
 
 </div>
 
