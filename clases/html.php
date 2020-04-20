@@ -57,13 +57,13 @@ class html
 
     public function select_buscador(string $label, string $name, int $col, array $registros = array(),
                                     string $elementos = '', string $value = '-1', string $required = 'required',
-                                    string $chart = ' ', bool $ln = false){
+                                    string $chart = ' ', bool $ln = false, int $select2id = 1){
         $array_elementos = explode(',',$elementos);
         $select_html = '';
         $select_html .= "<div class=col-md-$col>";
         $select_html .= "<div class='form-group'>";
         $select_html .= "<label>$label</label>";
-        $select_html .= "<select $required name='$name' class='form-control select2'  data-placeholder='$label'  data-select2-id='2' tabindex='-1' >";
+        $select_html .= "<select $required name='$name' class='form-control select2'  data-placeholder='$label'  data-select2-id='$select2id' tabindex='-1' >";
 
         foreach ($registros as $registro){
             $text = '';
@@ -91,13 +91,13 @@ class html
 
     public function select_multiple(string $label, string $name, int $col, array $registros = array(),
                                     string $elementos = '', array $value = array(), string $required = 'required',
-                                    string $chart = ' ', bool $ln = false){
+                                    string $chart = ' ', bool $ln = false, int $select2id = 1){
         $array_elementos = explode(',',$elementos);
         $select_html = '';
         $select_html .= "<div class=col-md-$col>";
         $select_html .= "<div class='form-group'>";
         $select_html .= "<label>$label</label>";
-        $select_html .= "<select $required name='$name' class='form-control select2 select2-hidden-accessible' multiple='' data-placeholder='$label' style='width: 100%;' data-select2-id='1' tabindex='-1' aria-hidden='true'>";
+        $select_html .= "<select $required name='$name' class='form-control select2 select2-hidden-accessible' multiple='' data-placeholder='$label' style='width: 100%;' data-select2-id='$select2id' tabindex='-1' aria-hidden='true'>";
 
         foreach ($registros as $registro){
             $text = '';
