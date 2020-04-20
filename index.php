@@ -124,10 +124,13 @@
         <section class="content">
 
                 <?php if ($controlador->breadcrumb){ ?>
-                    <ol class="breadcrumb">
-                        <li><a ><?php echo strtoupper(CONTROLADOR); ?></a></li>
-                        <li><a ><?php echo strtoupper(METODO); ?></a></li>
-                    </ol>
+                <br>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page"><?php echo strtoupper(CONTROLADOR); ?></li>
+                            <li class="breadcrumb-item active" aria-current="page"><?php echo strtoupper(METODO); ?></li>
+                        </ol>
+                    </nav>
                 <?php }// end if ($controlador->breadcrumb)  ?>
 
                 <?php if (isset($_GET['mensaje'])){ ?>
