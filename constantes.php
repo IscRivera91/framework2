@@ -7,6 +7,6 @@
     define('RUTA_FONT',RUTA_PROYECTO.'template/font-awesome/');
 
     // COLORES
-    define('COLORBASE','style="color:#000000;"');
+    define('COLORBASE','style="color:#17a2b8;"');
     define('BTNCOLOR', 'btn-default');
     define('ALERTCOLORLOGIN','alert-success');

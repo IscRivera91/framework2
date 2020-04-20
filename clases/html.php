@@ -151,14 +151,14 @@ class html
     public function paginador(int $numero_paginas, int $pagina, string $tabla){
         $url_base = get_url($tabla,'lista',SESSION_ID).'&pag=';
         $paginador_html = '';
-        $paginador_html .= "<nav aria-label='Page navigation'>";
+        $paginador_html .= "<br><nav aria-label='navigation'>";
         $paginador_html .= "    <ul class='pagination'>";
 
-        $paginador_html .= "        <li>";
+        $paginador_html .= "        <li class='page-item'>";
         if ($pagina > 1){
-            $paginador_html .= "            <a href='".$url_base.($pagina-1)."' aria-label='Anterior'>";
+            $paginador_html .= "            <a class='page-link' href='".$url_base.($pagina-1)."' aria-label='Anterior'>";
         }else{
-            $paginador_html .= "            <a aria-label='Anterior'>";
+            $paginador_html .= "            <a class='page-link' aria-label='Anterior'>";
         }
         $paginador_html .= "                <span aria-hidden='true'>&laquo;</span>";
         $paginador_html .= "            </a>";
@@ -167,17 +167,17 @@ class html
         for ($i = 1 ; $i <= $numero_paginas ; $i++){
 
             if ($i == $pagina){
-                $paginador_html .= "        <li class='active'><a href='".$url_base.$i."'>$i</a></li>";
+                $paginador_html .= "        <li class='page-item' class='active'><a class='page-link' href='".$url_base.$i."'>$i</a></li>";
             }else{
-                $paginador_html .= "        <li><a href='".$url_base.$i."'>$i</a></li>";
+                $paginador_html .= "        <li class='page-item'><a class='page-link' href='".$url_base.$i."'>$i</a></li>";
             }
 
         }
-        $paginador_html .= "        <li>";
+        $paginador_html .= "        <li class='page-item'>";
         if ($pagina < $numero_paginas){
-            $paginador_html .= "            <a href='".$url_base.($pagina+1)."' aria-label='Siguiente'>";
+            $paginador_html .= "            <a class='page-link' href='".$url_base.($pagina+1)."' aria-label='Siguiente'>";
         }else{
-            $paginador_html .= "            <a aria-label='Siguiente'>";
+            $paginador_html .= "            <a class='page-link' aria-label='Siguiente'>";
         }
         $paginador_html .= "                <span aria-hidden='true'>&raquo;</span>";
         $paginador_html .= "            </a>";

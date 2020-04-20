@@ -115,56 +115,65 @@
     <?php require_once ('template/header2.php'); ?>
     <?php require_once ('template/nav.php'); ?>
     <?php require_once ('template/menu.php'); ?>
-    <!-- Content Wrapper. Contains page content -->
+
+    <div class="container-fluid">
+        
+        <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content">
 
-            <?php if ($controlador->breadcrumb){ ?>
-                <ol class="breadcrumb">
-                    <li><a ><?php echo strtoupper(CONTROLADOR); ?></a></li>
-                    <li><a ><?php echo strtoupper(METODO); ?></a></li>
-                </ol>
-            <?php }// end if ($controlador->breadcrumb)  ?>
+                <?php if ($controlador->breadcrumb){ ?>
+                    <ol class="breadcrumb">
+                        <li><a ><?php echo strtoupper(CONTROLADOR); ?></a></li>
+                        <li><a ><?php echo strtoupper(METODO); ?></a></li>
+                    </ol>
+                <?php }// end if ($controlador->breadcrumb)  ?>
 
-            <?php if (isset($_GET['mensaje'])){ ?>
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <div class="alert alert-info alert-dismissible"
-                             style="background-color: white !important; color: black !important; border-color: white !important;">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <p align="center"><?php echo $_GET['mensaje']; ?></p>
+                <?php if (isset($_GET['mensaje'])){ ?>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-10">
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                <strong><?php echo $_GET['mensaje']; ?></strong>.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                         </div>
+                        <div class="col-md-1"></div>
                     </div>
-                    <div class="col-md-1"></div>
-                </div>
 
-            <?php } // end if (isset($_GET['mensaje'])) ?>
+                <?php } // end if (isset($_GET['mensaje'])) ?>
+               
+                <?php
+                $view = 'views/'.CONTROLADOR.'/'.METODO.'.php';
+                if(file_exists($view)) {
+                    require_once ('views/'.CONTROLADOR.'/'.METODO.'.php');
+                }else{
 
-            <?php
-            $view = 'views/'.CONTROLADOR.'/'.METODO.'.php';
-            if(file_exists($view)) {
-                require_once ('views/'.CONTROLADOR.'/'.METODO.'.php');
-            }else{
+                    if ( METODO == 'alta' ){
+                        require_once ('views/1base/alta.php');
+                    }
 
-                if ( METODO == 'alta' ){
-                    require_once ('views/1base/alta.php');
-                }
+                    if (METODO == 'modifica'){
+                        require_once ('views/1base/modifica.php');
+                    }
 
-                if (METODO == 'modifica'){
-                    require_once ('views/1base/modifica.php');
-                }
-
-                if (METODO == 'lista'){
-                    require_once ('views/1base/lista.php');
-                }
-            }// end if(file_exists($view))
+                    if (METODO == 'lista'){
+                        require_once ('views/1base/lista.php');
+                    }
+                }// end if(file_exists($view))
 
 
-            ?>
-        </section><!-- /.content -->
+                ?>
+            </section><!-- /.content -->
+        </div>
+
     </div>
+    
 
 
     <footer class="main-footer">
@@ -194,6 +203,8 @@
 <script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Bootstrap Switch -->
 <script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/dist/js/adminlte.min.js"></script>
 <?php

@@ -17,7 +17,7 @@ $inputs = $controlador->inputs_filtro_lista;
 }
 
     ?>
-<div style="background-color: white; border-radius: 10px " class="table-responsive">
+<div style="background-color: white;  " class="table-responsive">
     <table class="table table-hover">
 
         <tbody>
