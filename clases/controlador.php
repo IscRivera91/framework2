@@ -253,7 +253,7 @@
             if (isset($_COOKIE[$this->tabla.'_lista']) && !isset($_POST[$this->tabla.'_lista'])){
                 $_POST = unserialize($_COOKIE[$this->tabla.'_lista']);
             }
-
+            
             if (isset($_POST[$this->tabla.'_lista'])){
                 setcookie($this->tabla.'_lista',serialize($_POST));
                 foreach ($this->filtro_lista_campos as $label => $name){

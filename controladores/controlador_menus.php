@@ -48,6 +48,13 @@ class controlador_menus extends controlador {
     }// end modifica
 
     public function lista(){
+        // configuracion de el filtro para la lista
+        $this->lista_usar_filtro = true;
+        $this->inputs_filtro_lista_cols = 4;
+        $this->filtro_lista_campos = array(
+            'Menu' => 'menus.descripcion_menu'
+        );
+        // termina configuracion de el filtro para la lista
 
         $this->nombre_columnas_lista = array('ID','Menu','Etiqueta','Icono','Estatus');
         $this->columnas_lista = array('menus.id','menus.descripcion_menu','menus.label_menu','icon_menu','menus.status');

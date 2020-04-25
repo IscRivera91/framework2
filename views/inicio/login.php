@@ -2,24 +2,21 @@
 
     <title><?php echo NOMBRE_PROYECTO ?></title>
 </head>
-<br>
 <?php if (isset($_GET['mensaje'])){ ?>
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+        
+        <div class="col-md-12">
             <div class="alert <?php echo ALERTCOLORLOGIN ?> alert-dismissible"
                  style="background-color: white !important; color: black !important; border-color: white !important;">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <p align="center"><?php echo $_GET['mensaje']; ?></p>
             </div>
         </div>
-        <div class="col-md-4"></div>
-
-
-
     </div>
 
 <?php } ?>
+<br>
+
 <body class="hold-transition login-page">
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -52,7 +49,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn <?php echo BTNCOLOR ?> btn-block">Entrar</button>
+            <button type="submit" class="btn btn-<?php echo COLORBASE_BOOTSTRAP ?> btn-block">Entrar</button>
           </div>
           <!-- /.col -->
         </div>
@@ -66,9 +63,27 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="<?php echo RUTA_BOOTSTRAP ?>js/jquery.min.js"></script>
-<script src="<?php echo RUTA_BOOTSTRAP ?>js/popper.min.js"></script>
-<script src="<?php echo RUTA_BOOTSTRAP ?>js/bootstrap.min.js"></script>
-<script src="<?php echo RUTA_ADMINLTE ?>js/adminlte.min.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/jquery/jquery.min.js"></script>
+<!-- Select2 -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3//moment/moment.min.js"></script>
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/bootstrap/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/dist/js/adminlte.min.js"></script>
 </body>
 </html>

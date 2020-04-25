@@ -117,6 +117,13 @@ class controlador_grupos extends controlador {
     }// end modifica
 
     public function lista(){
+        // configuracion de el filtro para la lista
+        $this->lista_usar_filtro = true;
+        $this->inputs_filtro_lista_cols = 4;
+        $this->filtro_lista_campos = array(
+            'Grupo' => 'grupos.descripcion_grupo'
+        );
+        // termina configuracion de el filtro para la lista
 
         $this->nombre_columnas_lista = array('ID','Grupo','Estatus');
         $this->columnas_lista = array('grupos.id','grupos.descripcion_grupo','grupos.status');

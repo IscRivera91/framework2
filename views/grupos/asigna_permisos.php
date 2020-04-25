@@ -1,8 +1,9 @@
 <?php $menus_metodos = $controlador->metodos_menu; ?>
-<div class="panel panel-default">
+<br>
+<div class="card card-info">
     <input type="hidden" name="session_id" id="session_id" value="<?php echo $_GET['session_id'] ?>">
-    <div class="panel-heading">
-        <h3 class="panel-title">Grupo : <?php echo $controlador->nombre_grupo ?> </h3>
+    <div class="card-header text-center">
+        Grupo : <?php echo $controlador->nombre_grupo ?>
     </div>
     <div class="panel-body">
         <div class="container-fluid">

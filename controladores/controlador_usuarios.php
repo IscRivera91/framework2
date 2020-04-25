@@ -40,7 +40,7 @@ class controlador_usuarios extends controlador{
         $this->inputs[] = $this->HTML->input('Contraseña','password',4,
             'Contraseña');
 
-        $this->inputs[] = $this->HTML->select('Tipo Usuario','grupo_id',
+        $this->inputs[] = $this->HTML->select('Grupo','grupo_id',
             4,$this->grupos,'descripcion_grupo');
 
         $this->inputs[] = $this->HTML->submit('Registrar','usuarios_alta_bd',4);
@@ -61,15 +61,26 @@ class controlador_usuarios extends controlador{
         $this->inputs[] = $this->HTML->input('Contraseña','password',4,
             'Contraseña',$this->registro['password']);
 
-        $this->inputs[] = $this->HTML->select('Tipo Usuario','grupo_id',
+        $this->inputs[] = $this->HTML->select('Grupo','grupo_id',
             4,$this->grupos,'descripcion_grupo',$this->registro['grupo_id']);
 
         $this->inputs[] = $this->HTML->submit('Modificar','usuarios_modifica_bd',4);
     }// end modifica
 
     public function lista(){
+        // configuracion de el filtro para la lista
+        $this->lista_usar_filtro = true;
+        $this->inputs_filtro_lista_cols = 3;
+        $this->filtro_lista_campos = array(
+            'Nombre' => 'usuarios.nombre_completo',
+            'Usuario' => 'usuarios.user',
+            'Correo' => 'usuarios.email',
+            'Grupo' => 'grupos.descripcion_grupo'
 
-        $this->nombre_columnas_lista = array('ID','Nombre','Usuario','Correo','Tipo Usuario','Estatus');
+        );
+        // termina configuracion de el filtro para la lista
+
+        $this->nombre_columnas_lista = array('ID','Nombre','Usuario','Correo','Grupo','Estatus');
         $this->columnas_lista = array('usuarios.id','nombre_completo','user','email','grupos.descripcion_grupo',
             'usuarios.status');
         $this->joins_lista = ' LEFT JOIN grupos ON usuarios.grupo_id = grupos.id ';

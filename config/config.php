@@ -6,6 +6,5 @@
 
     // COLORES
     define('COLORBASE','style="color:#17a2b8;"');
-    define('BTNCOLOR', 'btn-info');
-    define('ALERTCOLORLOGIN','alert-info');
+    define('COLORBASE_BOOTSTRAP','info');
 	
