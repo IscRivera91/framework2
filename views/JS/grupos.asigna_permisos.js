@@ -14,7 +14,7 @@ function asigna_permisos(metodo_id,grupo_id) {
                 var respuesta = data['respuesta'];
 
                 if(respuesta == true){
-                    $('#'+metodo_id).removeClass("btn-info").addClass("btn-default");
+                    $('#'+metodo_id).removeClass("btn-"+COLORBASE_BOOTSTRAP).addClass("btn-default");
                     return false;
                 }else{
 
@@ -42,7 +42,7 @@ function asigna_permisos(metodo_id,grupo_id) {
                 var respuesta = data['respuesta'];
 
                 if(respuesta == true){
-                    $('#'+metodo_id).removeClass("btn-default").addClass("btn-info");
+                    $('#'+metodo_id).removeClass("btn-default").addClass("btn-"+COLORBASE_BOOTSTRAP );
                     return false;
                 }else{
 

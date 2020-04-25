@@ -13,7 +13,7 @@
                         <div class="card-header" id="heading<?php echo $menu ?>">
                         <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#<?php echo $menu ?>" aria-expanded="false" aria-controls="collapseTwo">
-                            <b <?php COLORBASE ?> ><?php echo strtoupper ($menu) ?></b>  
+                            <b <?php echo COLORBASE ?> ><?php echo strtoupper ($menu) ?></b>  
                             </button>
                         </h2>
                         </div>

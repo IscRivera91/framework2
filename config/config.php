@@ -6,5 +6,4 @@
 
     // COLORES
     define('COLORBASE','style="color:#17a2b8"');
-    define('COLORBASE_BOOTSTRAP','info');
-	
+	define('COLORBASE_BOOTSTRAP','info');

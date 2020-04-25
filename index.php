@@ -210,6 +210,9 @@
 <!-- AdminLTE App -->
 <script src="<?php echo RUTA_PROYECTO ?>template/adminlte3/dist/js/adminlte.min.js"></script>
 <?php
+echo "<script>";
+echo "var COLORBASE_BOOTSTRAP = '".COLORBASE_BOOTSTRAP."';";
+echo "</script>";
 $js = 'views/JS/'.CONTROLADOR.'.'.METODO.'.js';
 if (file_exists($js)){?><script src="<?php echo RUTA_PROYECTO.$js ?>"></script>">
 <?php } ?>
