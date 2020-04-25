@@ -1,5 +1,4 @@
 <?php $menus_metodos = $controlador->metodos_menu; ?>
-<br>
 <div class="card card-info">
     <input type="hidden" name="session_id" id="session_id" value="<?php echo $_GET['session_id'] ?>">
     <div class="card-header text-center">

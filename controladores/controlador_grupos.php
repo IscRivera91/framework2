@@ -35,7 +35,7 @@ class controlador_grupos extends controlador {
             print_r($error);
             exit;
         }
-        $this->breadcrumb = false;
+        $this->breadcrumb = true;
         $this->metodos_menu = $this->grupo_modelo->obten_metodos();
         $this->nombre_grupo = $this->grupo_modelo->obten_nombre_grupo();
     }
