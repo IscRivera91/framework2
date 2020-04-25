@@ -10,14 +10,7 @@ function asigna_permisos(metodo_id,grupo_id) {
             type: "POST",
             data: {},
             success: function (data) {
-
-                if(!isJson(data)){
-                    data = JSON.parse(data);
-                    console.log(data);
-                }else{
-                    console.log(data);
-                }
-
+                
                 var respuesta = data['respuesta'];
 
                 if(respuesta == true){
@@ -44,14 +37,8 @@ function asigna_permisos(metodo_id,grupo_id) {
             type: "POST",
             data: {},
             success: function (data) {
-
-                if(!isJson(data)){
-                    data = JSON.parse(data);
-                    console.log(data);
-                }else{
-                    console.log(data);
-                }
-
+                
+                
                 var respuesta = data['respuesta'];
 
                 if(respuesta == true){
