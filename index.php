@@ -5,9 +5,8 @@
 	ini_set('display_errors', 1);
 	date_default_timezone_set('America/Mexico_City');
 	require_once('requires.php');
-	define('PRODUCCION' , false);
 
-	$parametros_get_requeridos = array('controlador','metodo');
+    $parametros_get_requeridos = array('controlador','metodo');
 
     foreach ($parametros_get_requeridos as $parametro){
         valida_parametro_get($parametro);

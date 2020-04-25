@@ -29,12 +29,11 @@
           <?php foreach ($menu_navegacion as $item_menu => $menu) { ?>
 
             <?php
+                $imprime = '<li class="nav-item has-treeview">';
                 if ( CONTROLADOR == $menu_navegacion[$item_menu][0]){
-                    echo '<li class="nav-item has-treeview menu-open">';
+                  $imprime =  '<li class="nav-item has-treeview menu-open">';
                 }
-                else{
-                    echo '<li class="nav-item has-treeview">';
-                }
+                echo $imprime;
             ?>
             
 
