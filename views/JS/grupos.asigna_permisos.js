@@ -1,7 +1,7 @@
 var session_id = $('#session_id').val();
 function asigna_permisos(metodo_id,grupo_id) {
 
-    if ( $('#'+metodo_id).hasClass("btn-info") ){
+    if ( $('#'+metodo_id).hasClass("btn-"+COLORBASE_BOOTSTRAP) ){
         // quitar permisos
         var url = 'index.php?controlador=grupos&metodo=baja_permiso&session_id='+session_id+'&metodo_id='+metodo_id+
             '&grupo_id='+grupo_id;

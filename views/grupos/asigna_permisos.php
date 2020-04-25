@@ -24,7 +24,7 @@
                                         $metodo_id = $metodo['id'];
                                         $grupo_id = $_GET['registro_id'];
                                         if($metodo['estado'] == 1){
-                                            echo "<a onclick='asigna_permisos($metodo_id,$grupo_id);' id='$metodo_id' class='btn btn-info btn-flat'>".$metodo['metodo']."</a>";
+                                            echo "<a onclick='asigna_permisos($metodo_id,$grupo_id);' id='$metodo_id' class='btn btn-". COLORBASE_BOOTSTRAP ." btn-flat'>".$metodo['metodo']."</a>";
                                         }else{
                                             echo "<a onclick='asigna_permisos($metodo_id,$grupo_id);' id='$metodo_id' class='btn btn-default btn-flat'>".$metodo['metodo']."</a>";
                                         }
