@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 18/04/2020 23:12:30
+ Date: 24/04/2020 21:36:55
 */
 
 SET NAMES utf8mb4;
@@ -41,8 +41,8 @@ CREATE TABLE `grupos`  (
 -- ----------------------------
 -- Records of grupos
 -- ----------------------------
-INSERT INTO `grupos` VALUES (1, 'Programador', 'activo', 1, 1, '2019-11-16 00:20:16', '2019-12-22 14:29:47');
-INSERT INTO `grupos` VALUES (2, 'Administrador', 'activo', 1, 1, '2019-12-22 19:12:04', '2019-12-27 02:43:11');
+INSERT INTO `grupos` VALUES (1, 'Programador', 'activo', 1, 1, '2019-11-16 00:20:16', '2020-04-24 20:03:33');
+INSERT INTO `grupos` VALUES (2, 'Administrador', 'activo', 1, 1, '2019-12-22 19:12:04', '2020-04-24 21:26:41');
 
 -- ----------------------------
 -- Table structure for menus
@@ -97,7 +97,7 @@ CREATE TABLE `metodo_grupo`  (
   CONSTRAINT `metodo_grupo_ibfk_2` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `metodo_grupo_ibfk_3` FOREIGN KEY (`usuario_alta_id`) REFERENCES `usuarios` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `metodo_grupo_ibfk_4` FOREIGN KEY (`usuario_update_id`) REFERENCES `usuarios` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Redundant;
+) ENGINE = InnoDB AUTO_INCREMENT = 85 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Redundant;
 
 -- ----------------------------
 -- Records of metodo_grupo
@@ -105,21 +105,15 @@ CREATE TABLE `metodo_grupo`  (
 INSERT INTO `metodo_grupo` VALUES (1, 1, 1, 'activo', 1, 1, '2019-11-18 21:39:12', '2019-12-20 22:43:41');
 INSERT INTO `metodo_grupo` VALUES (4, 2, 1, 'activo', 1, 1, '2019-11-18 21:38:25', '2019-12-20 22:43:42');
 INSERT INTO `metodo_grupo` VALUES (7, 3, 1, 'activo', 1, 1, '2019-11-18 16:50:34', '2019-12-20 22:43:42');
-INSERT INTO `metodo_grupo` VALUES (8, 4, 1, 'activo', 1, 1, '2019-11-18 16:50:53', '2019-12-20 22:43:43');
 INSERT INTO `metodo_grupo` VALUES (9, 5, 1, 'activo', 1, 1, '2019-11-18 21:19:54', '2019-12-20 22:43:44');
 INSERT INTO `metodo_grupo` VALUES (10, 6, 1, 'activo', 1, 1, '2019-11-21 00:23:12', '2019-12-20 22:43:45');
-INSERT INTO `metodo_grupo` VALUES (11, 7, 1, 'activo', 1, 1, '2019-11-21 00:23:31', '2019-12-20 22:43:45');
 INSERT INTO `metodo_grupo` VALUES (12, 8, 1, 'activo', 1, 1, '2019-11-21 00:23:49', '2019-12-20 22:43:48');
-INSERT INTO `metodo_grupo` VALUES (13, 9, 1, 'activo', 1, 1, '2019-12-22 12:46:07', '2019-12-22 12:46:07');
 INSERT INTO `metodo_grupo` VALUES (14, 10, 1, 'activo', 1, 1, '2019-12-22 12:46:15', '2019-12-22 12:46:15');
 INSERT INTO `metodo_grupo` VALUES (15, 11, 1, 'activo', 1, 1, '2019-12-22 12:46:25', '2019-12-22 12:46:25');
 INSERT INTO `metodo_grupo` VALUES (16, 12, 1, 'activo', 1, 1, '2019-12-22 12:46:34', '2019-12-22 12:46:34');
-INSERT INTO `metodo_grupo` VALUES (17, 13, 1, 'activo', 1, 1, '2019-12-22 12:46:38', '2019-12-22 12:46:38');
 INSERT INTO `metodo_grupo` VALUES (18, 14, 1, 'activo', 1, 1, '2019-12-22 12:46:44', '2019-12-22 12:46:44');
 INSERT INTO `metodo_grupo` VALUES (20, 16, 1, 'activo', 1, 1, '2019-12-22 13:58:48', '2019-12-22 13:58:48');
 INSERT INTO `metodo_grupo` VALUES (21, 17, 1, 'activo', 1, 1, '2019-12-22 13:58:59', '2019-12-22 13:58:59');
-INSERT INTO `metodo_grupo` VALUES (22, 18, 1, 'activo', 1, 1, '2019-12-22 14:00:59', '2019-12-22 14:00:59');
-INSERT INTO `metodo_grupo` VALUES (23, 19, 1, 'activo', 1, 1, '2019-12-22 14:01:05', '2019-12-22 14:01:05');
 INSERT INTO `metodo_grupo` VALUES (57, 1, 2, 'activo', 1, 1, '2019-12-23 04:03:03', '2019-12-23 04:03:03');
 INSERT INTO `metodo_grupo` VALUES (58, 2, 2, 'activo', 1, 1, '2019-12-23 04:03:20', '2019-12-23 04:03:20');
 INSERT INTO `metodo_grupo` VALUES (59, 36, 1, 'activo', 1, 1, '2019-12-28 22:19:27', '2019-12-28 22:19:27');
@@ -139,8 +133,14 @@ INSERT INTO `metodo_grupo` VALUES (72, 50, 1, 'activo', 1, 1, '2019-12-29 00:25:
 INSERT INTO `metodo_grupo` VALUES (73, 51, 1, 'activo', 1, 1, '2019-12-29 00:25:09', '2019-12-29 00:25:09');
 INSERT INTO `metodo_grupo` VALUES (74, 52, 1, 'activo', 1, 1, '2019-12-29 00:25:09', '2019-12-29 00:25:09');
 INSERT INTO `metodo_grupo` VALUES (75, 53, 1, 'activo', 1, 1, '2020-01-03 02:10:46', '2020-01-03 02:10:46');
-INSERT INTO `metodo_grupo` VALUES (76, 54, 1, 'activo', 1, 1, '2020-01-03 02:10:53', '2020-01-03 02:10:53');
 INSERT INTO `metodo_grupo` VALUES (77, 55, 1, 'activo', 1, 1, '2020-01-03 02:11:01', '2020-01-03 02:11:01');
+INSERT INTO `metodo_grupo` VALUES (78, 18, 1, 'activo', 1, 1, '2020-04-24 20:56:58', '2020-04-24 20:56:58');
+INSERT INTO `metodo_grupo` VALUES (79, 9, 1, 'activo', 1, 1, '2020-04-24 20:57:00', '2020-04-24 20:57:00');
+INSERT INTO `metodo_grupo` VALUES (80, 19, 1, 'activo', 1, 1, '2020-04-24 20:57:03', '2020-04-24 20:57:03');
+INSERT INTO `metodo_grupo` VALUES (81, 4, 1, 'activo', 1, 1, '2020-04-24 20:57:12', '2020-04-24 20:57:12');
+INSERT INTO `metodo_grupo` VALUES (82, 7, 1, 'activo', 1, 1, '2020-04-24 20:57:44', '2020-04-24 20:57:44');
+INSERT INTO `metodo_grupo` VALUES (83, 54, 1, 'activo', 1, 1, '2020-04-24 21:12:53', '2020-04-24 21:12:53');
+INSERT INTO `metodo_grupo` VALUES (84, 13, 1, 'activo', 1, 1, '2020-04-24 21:13:10', '2020-04-24 21:13:10');
 
 -- ----------------------------
 -- Table structure for metodos
@@ -227,7 +227,7 @@ CREATE TABLE `sessiones`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `grupo_id`(`grupo_id`) USING BTREE,
   CONSTRAINT `sessiones_ibfk_1` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sessiones
@@ -239,6 +239,10 @@ INSERT INTO `sessiones` VALUES (24, '3c84014bd32aad662f9c365fc78103ee', 1, '2020
 INSERT INTO `sessiones` VALUES (25, '3ff321391b89266c40d023a2e56b3381', 1, '2020-04-18', 1, '2020-04-18 12:40:01', '2020-04-18 12:40:01');
 INSERT INTO `sessiones` VALUES (26, '250070af135883e6896f7780459c67a4', 1, '2020-04-18', 1, '2020-04-18 14:29:36', '2020-04-18 14:29:36');
 INSERT INTO `sessiones` VALUES (27, '2e31c34d0cbc7ef0eafd91452b43cc00', 1, '2020-04-18', 1, '2020-04-18 21:59:55', '2020-04-18 21:59:55');
+INSERT INTO `sessiones` VALUES (29, '8cf324dc48e21dd7efe906e728b7fefa', 1, '2020-04-20', 1, '2020-04-20 11:16:35', '2020-04-20 11:16:35');
+INSERT INTO `sessiones` VALUES (31, '7704aa88a70044baca26255ff5f12bd7', 1, '2020-04-21', 1, '2020-04-21 23:37:20', '2020-04-21 23:37:20');
+INSERT INTO `sessiones` VALUES (32, '4d3e15f81b9cb595b6872058138ad6f3', 1, '2020-04-24', 1, '2020-04-24 19:54:41', '2020-04-24 19:54:41');
+INSERT INTO `sessiones` VALUES (34, '59c3579b9d500daeed9b54b58ae7d9c1', 1, '2020-04-24', 1, '2020-04-24 21:09:27', '2020-04-24 21:09:27');
 
 -- ----------------------------
 -- Table structure for usuarios
@@ -265,7 +269,7 @@ CREATE TABLE `usuarios`  (
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`usuario_alta_id`) REFERENCES `usuarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`usuario_update_id`) REFERENCES `usuarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of usuarios
