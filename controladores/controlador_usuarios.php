@@ -5,6 +5,7 @@ class controlador_usuarios extends controlador{
 
     public $grupos = array();
     public $grupo_modelo;
+    public $sexo = array();
 
     public function __construct(database $link){
 
@@ -14,6 +15,9 @@ class controlador_usuarios extends controlador{
     }
 
     private function configuracion(){
+
+        $this->sexo[] = array('id' => 'masculino','descripcion' => 'Masculino');
+        $this->sexo[] = array('id' => 'femenino','descripcion' => 'Femenino');
 
         $this->grupo_modelo = new grupos($this->link);
 
@@ -37,6 +41,9 @@ class controlador_usuarios extends controlador{
 
         $this->inputs[] = $this->HTML->input('Usuario','user',4,'Usuario');
 
+        $this->inputs[] = $this->HTML->select('Sexo','sexo',
+        4,$this->sexo,'descripcion');
+
         $this->inputs[] = $this->HTML->input('Contraseña','password',4,
             'Contraseña');
 
@@ -57,6 +64,9 @@ class controlador_usuarios extends controlador{
 
         $this->inputs[] = $this->HTML->input('Usuario','user',4,'Usuario',
             $this->registro['user']);
+
+        $this->inputs[] = $this->HTML->select('Sexo','sexo',
+            4,$this->sexo,'descripcion',$this->registro['sexo']);
 
         $this->inputs[] = $this->HTML->input('Contraseña','password',4,
             'Contraseña',$this->registro['password']);

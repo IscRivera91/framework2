@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 26/04/2020 21:49:39
+ Date: 26/04/2020 22:09:44
 */
 
 SET NAMES utf8mb4;
@@ -227,7 +227,7 @@ CREATE TABLE `sessiones`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `grupo_id`(`grupo_id`) USING BTREE,
   CONSTRAINT `sessiones_ibfk_1` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sessiones
@@ -247,6 +247,7 @@ INSERT INTO `sessiones` VALUES (36, '94ad594bc3cd35b344ac5a3c6b02c151', 1, '2020
 INSERT INTO `sessiones` VALUES (37, '7c8784506de35f81af8c41f93c8a1bc8', 1, '2020-04-25', 1, '2020-04-25 10:22:40', '2020-04-25 10:22:40');
 INSERT INTO `sessiones` VALUES (38, 'b0dab502582fb6706026f1c21a76c93b', 1, '2020-04-26', 1, '2020-04-26 20:01:15', '2020-04-26 20:01:15');
 INSERT INTO `sessiones` VALUES (39, '6365a62a1db0f9cae45fdab6fd99ad4f', 1, '2020-04-26', 1, '2020-04-26 21:47:56', '2020-04-26 21:47:56');
+INSERT INTO `sessiones` VALUES (41, '7c7cf2402da3ca8242a12c3f48f73cbb', 2, '2020-04-26', 1, '2020-04-26 22:09:17', '2020-04-26 22:09:17');
 
 -- ----------------------------
 -- Table structure for usuarios
@@ -274,11 +275,12 @@ CREATE TABLE `usuarios`  (
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`usuario_alta_id`) REFERENCES `usuarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`usuario_update_id`) REFERENCES `usuarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
-INSERT INTO `usuarios` VALUES (1, 'admin', 'admin', 'Programador', 'programador@admin.com', 'masculino', 1, 'activo', 1, 1, '2019-11-11 23:13:57', '2020-04-26 21:49:25');
+INSERT INTO `usuarios` VALUES (1, 'admin', 'admin', 'Programador', 'programador@admin.com', 'masculino', 1, 'activo', 1, 1, '2019-11-11 23:13:57', '2020-04-26 22:08:41');
+INSERT INTO `usuarios` VALUES (2, 'maria', 'maria', 'maria', 'maria@mail.com', 'femenino', 1, 'activo', 1, 1, '2020-04-26 22:09:10', '2020-04-26 22:09:10');
 
 SET FOREIGN_KEY_CHECKS = 1;
