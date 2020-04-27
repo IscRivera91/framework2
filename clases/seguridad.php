@@ -42,6 +42,7 @@ class seguridad{
         define('SESSION_ID',$session['session_id']);
         define('NOMBRE_USUARIO',strtoupper($session['nombre_completo']));
         define('GRUPO',strtoupper($session['descripcion_grupo']));
+        define('SEXO',$session['sexo']);
         return true;
     }
 

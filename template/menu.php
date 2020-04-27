@@ -11,9 +11,15 @@
     <!-- Sidebar -->
     <div class="sidebar">
 
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?php echo RUTA_PROYECTO ?>template/adminlte3/dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">
+          <?php
+            $avatar = '4';
+            if (SEXO == 'femenino'){
+              $avatar = '3';
+            }
+          ?>
+          <img src="<?php echo RUTA_PROYECTO ?>template/adminlte3/dist/img/avatar<?php echo $avatar; ?>.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a class="d-block"><?php echo NOMBRE_USUARIO; ?></a>

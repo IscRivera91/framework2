@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 24/04/2020 21:36:55
+ Date: 26/04/2020 21:49:39
 */
 
 SET NAMES utf8mb4;
@@ -97,7 +97,7 @@ CREATE TABLE `metodo_grupo`  (
   CONSTRAINT `metodo_grupo_ibfk_2` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `metodo_grupo_ibfk_3` FOREIGN KEY (`usuario_alta_id`) REFERENCES `usuarios` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `metodo_grupo_ibfk_4` FOREIGN KEY (`usuario_update_id`) REFERENCES `usuarios` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 85 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Redundant;
+) ENGINE = InnoDB AUTO_INCREMENT = 104 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Redundant;
 
 -- ----------------------------
 -- Records of metodo_grupo
@@ -116,14 +116,8 @@ INSERT INTO `metodo_grupo` VALUES (20, 16, 1, 'activo', 1, 1, '2019-12-22 13:58:
 INSERT INTO `metodo_grupo` VALUES (21, 17, 1, 'activo', 1, 1, '2019-12-22 13:58:59', '2019-12-22 13:58:59');
 INSERT INTO `metodo_grupo` VALUES (57, 1, 2, 'activo', 1, 1, '2019-12-23 04:03:03', '2019-12-23 04:03:03');
 INSERT INTO `metodo_grupo` VALUES (58, 2, 2, 'activo', 1, 1, '2019-12-23 04:03:20', '2019-12-23 04:03:20');
-INSERT INTO `metodo_grupo` VALUES (59, 36, 1, 'activo', 1, 1, '2019-12-28 22:19:27', '2019-12-28 22:19:27');
 INSERT INTO `metodo_grupo` VALUES (60, 37, 1, 'activo', 1, 1, '2019-12-28 22:19:28', '2019-12-28 22:19:28');
-INSERT INTO `metodo_grupo` VALUES (61, 38, 1, 'activo', 1, 1, '2019-12-28 22:19:28', '2019-12-28 22:19:28');
 INSERT INTO `metodo_grupo` VALUES (62, 39, 1, 'activo', 1, 1, '2019-12-28 22:19:28', '2019-12-28 22:19:28');
-INSERT INTO `metodo_grupo` VALUES (63, 40, 1, 'activo', 1, 1, '2019-12-28 22:19:28', '2019-12-28 22:19:28');
-INSERT INTO `metodo_grupo` VALUES (64, 41, 1, 'activo', 1, 1, '2019-12-28 22:19:28', '2019-12-28 22:19:28');
-INSERT INTO `metodo_grupo` VALUES (65, 42, 1, 'activo', 1, 1, '2019-12-28 22:19:29', '2019-12-28 22:19:29');
-INSERT INTO `metodo_grupo` VALUES (66, 43, 1, 'activo', 1, 1, '2019-12-28 22:19:29', '2019-12-28 22:19:29');
 INSERT INTO `metodo_grupo` VALUES (67, 45, 1, 'activo', 1, 1, '2019-12-29 00:25:08', '2019-12-29 00:25:08');
 INSERT INTO `metodo_grupo` VALUES (68, 46, 1, 'activo', 1, 1, '2019-12-29 00:25:08', '2019-12-29 00:25:08');
 INSERT INTO `metodo_grupo` VALUES (69, 47, 1, 'activo', 1, 1, '2019-12-29 00:25:08', '2019-12-29 00:25:08');
@@ -141,6 +135,12 @@ INSERT INTO `metodo_grupo` VALUES (81, 4, 1, 'activo', 1, 1, '2020-04-24 20:57:1
 INSERT INTO `metodo_grupo` VALUES (82, 7, 1, 'activo', 1, 1, '2020-04-24 20:57:44', '2020-04-24 20:57:44');
 INSERT INTO `metodo_grupo` VALUES (83, 54, 1, 'activo', 1, 1, '2020-04-24 21:12:53', '2020-04-24 21:12:53');
 INSERT INTO `metodo_grupo` VALUES (84, 13, 1, 'activo', 1, 1, '2020-04-24 21:13:10', '2020-04-24 21:13:10');
+INSERT INTO `metodo_grupo` VALUES (95, 42, 1, 'activo', 1, 1, '2020-04-24 22:26:58', '2020-04-24 22:26:58');
+INSERT INTO `metodo_grupo` VALUES (96, 40, 1, 'activo', 1, 1, '2020-04-24 22:26:59', '2020-04-24 22:26:59');
+INSERT INTO `metodo_grupo` VALUES (97, 38, 1, 'activo', 1, 1, '2020-04-24 22:27:07', '2020-04-24 22:27:07');
+INSERT INTO `metodo_grupo` VALUES (99, 41, 1, 'activo', 1, 1, '2020-04-24 22:27:10', '2020-04-24 22:27:10');
+INSERT INTO `metodo_grupo` VALUES (100, 43, 1, 'activo', 1, 1, '2020-04-24 22:27:12', '2020-04-24 22:27:12');
+INSERT INTO `metodo_grupo` VALUES (103, 36, 1, 'activo', 1, 1, '2020-04-24 22:55:17', '2020-04-24 22:55:17');
 
 -- ----------------------------
 -- Table structure for metodos
@@ -227,7 +227,7 @@ CREATE TABLE `sessiones`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `grupo_id`(`grupo_id`) USING BTREE,
   CONSTRAINT `sessiones_ibfk_1` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sessiones
@@ -242,7 +242,11 @@ INSERT INTO `sessiones` VALUES (27, '2e31c34d0cbc7ef0eafd91452b43cc00', 1, '2020
 INSERT INTO `sessiones` VALUES (29, '8cf324dc48e21dd7efe906e728b7fefa', 1, '2020-04-20', 1, '2020-04-20 11:16:35', '2020-04-20 11:16:35');
 INSERT INTO `sessiones` VALUES (31, '7704aa88a70044baca26255ff5f12bd7', 1, '2020-04-21', 1, '2020-04-21 23:37:20', '2020-04-21 23:37:20');
 INSERT INTO `sessiones` VALUES (32, '4d3e15f81b9cb595b6872058138ad6f3', 1, '2020-04-24', 1, '2020-04-24 19:54:41', '2020-04-24 19:54:41');
-INSERT INTO `sessiones` VALUES (34, '59c3579b9d500daeed9b54b58ae7d9c1', 1, '2020-04-24', 1, '2020-04-24 21:09:27', '2020-04-24 21:09:27');
+INSERT INTO `sessiones` VALUES (35, '457328447fd30fac2d7543344649c7ee', 1, '2020-04-24', 1, '2020-04-24 22:23:43', '2020-04-24 22:23:43');
+INSERT INTO `sessiones` VALUES (36, '94ad594bc3cd35b344ac5a3c6b02c151', 1, '2020-04-25', 1, '2020-04-25 09:55:47', '2020-04-25 09:55:47');
+INSERT INTO `sessiones` VALUES (37, '7c8784506de35f81af8c41f93c8a1bc8', 1, '2020-04-25', 1, '2020-04-25 10:22:40', '2020-04-25 10:22:40');
+INSERT INTO `sessiones` VALUES (38, 'b0dab502582fb6706026f1c21a76c93b', 1, '2020-04-26', 1, '2020-04-26 20:01:15', '2020-04-26 20:01:15');
+INSERT INTO `sessiones` VALUES (39, '6365a62a1db0f9cae45fdab6fd99ad4f', 1, '2020-04-26', 1, '2020-04-26 21:47:56', '2020-04-26 21:47:56');
 
 -- ----------------------------
 -- Table structure for usuarios
@@ -254,6 +258,7 @@ CREATE TABLE `usuarios`  (
   `password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `nombre_completo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `email` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `sexo` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `grupo_id` int(11) NULL DEFAULT NULL,
   `status` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'inactivo',
   `usuario_alta_id` int(11) NULL DEFAULT NULL,
@@ -269,11 +274,11 @@ CREATE TABLE `usuarios`  (
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`usuario_alta_id`) REFERENCES `usuarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`usuario_update_id`) REFERENCES `usuarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
-INSERT INTO `usuarios` VALUES (1, 'admin', 'admin', 'Programador', 'programador@admin.com', 1, 'activo', 1, 1, '2019-11-11 23:13:57', '2020-04-16 12:40:56');
+INSERT INTO `usuarios` VALUES (1, 'admin', 'admin', 'Programador', 'programador@admin.com', 'masculino', 1, 'activo', 1, 1, '2019-11-11 23:13:57', '2020-04-26 21:49:25');
 
 SET FOREIGN_KEY_CHECKS = 1;
