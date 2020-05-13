@@ -1,6 +1,6 @@
 *.log
 .idea/
-.archivos/*
+archivos/*
 config/server_config.php
 *.jpeg
 *.jpg
