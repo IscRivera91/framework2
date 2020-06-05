@@ -1,7 +1,6 @@
 <?php
 
-    require_once('config/server_config.php');
-    require_once('config/config.php');
+    require_once('config.php');
     require_once('redirect.php');
 
     spl_autoload_register(function($nombreClase){
