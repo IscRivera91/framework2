@@ -3,7 +3,7 @@ $registros = $controlador->registros;
 $inputs = $controlador->inputs_filtro_lista;
 ?>
     <form autocomplete="off" role="form" method="POST"
-          action="<?php echo get_url($controlador->tabla,'lista',SESSION_ID) ?>">
+          action="<?php echo Redirect::get_url($controlador->tabla,'lista',SESSION_ID) ?>">
         <div class="row">
             <?php
             foreach ($inputs as $input) {
@@ -55,7 +55,7 @@ $inputs = $controlador->inputs_filtro_lista;
                     <td>
                         <p class="text-center">
                             <?php foreach ($acciones as $accion): ?>
-                                <a <?php echo COLORBASE; ?> title="<?php echo $accion['label'] ?>" href="<?php echo get_url($accion['controlador'],
+                                <a <?php echo COLORBASE; ?> title="<?php echo $accion['label'] ?>" href="<?php echo Redirect::get_url($accion['controlador'],
                                     $accion['metodo'],SESSION_ID,'',
                                     $registro['id']) ?>"><i class="<?php echo $accion['icon'] ?>"></i></a>
                             <?php endforeach; ?>

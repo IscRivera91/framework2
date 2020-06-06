@@ -43,6 +43,10 @@
             $this->columnas_lista = array($this->tabla.'.id');
         }
 
+        public static function crear_controlador(string $nombre_controlador,database $link ):controlador{
+            return new $nombre_controlador($link);
+        }
+
         /*
          *   FUNCIONES PUBLICAS
         */
@@ -68,7 +72,7 @@
                 exit;
             }
             if ($header){
-                header_url($this->tabla,'lista',SESSION_ID,'');
+                Redirect::header_url($this->tabla,'lista',SESSION_ID,'');
                 exit;
             }
             return $resultado;
@@ -80,7 +84,7 @@
                 /*
                  *  se valida que los datos que vienen por POST vengan del formulario adecuado
                 */
-                header_url($this->tabla,'lista',SESSION_ID,
+                Redirect::header_url($this->tabla,'lista',SESSION_ID,
                     'Error, '.$this->tabla.'_alta_bd no encontrado');
             }
 
@@ -109,7 +113,7 @@
             }
             // si no existe algu error se redireciona a la lista de la tabla y se muestra un mensaje
             if ($header){
-                header_url($this->tabla,'lista',SESSION_ID,'registro exitoso');
+                Redirect::header_url($this->tabla,'lista',SESSION_ID,'registro exitoso');
                 exit;
             }
             return $resultado;
@@ -136,7 +140,7 @@
                 print_r($error);
                 exit;
             }
-            header_url($this->tabla,'lista',SESSION_ID,'');
+            Redirect::header_url($this->tabla,'lista',SESSION_ID,'');
         }
 
         public function elimina_bd(){
@@ -156,7 +160,7 @@
                 print_r($error);
                 exit;
             }
-            header_url($this->tabla,'lista',SESSION_ID,'registro eliminado');
+            Redirect::header_url($this->tabla,'lista',SESSION_ID,'registro eliminado');
         }// end elimina_bd
 
         public function lista (){
@@ -220,7 +224,7 @@
             $registro_id = $_GET['registro_id'];
 
             if (!isset($_POST[$this->tabla.'_modifica_bd'])){
-                header_url($this->tabla,'lista',SESSION_ID,'Error, al modificar registro');
+                Redirect::header_url($this->tabla,'lista',SESSION_ID,'Error, al modificar registro');
             }
 
             unset($_POST[$this->tabla.'_modifica_bd']);
@@ -235,13 +239,13 @@
                 print_r($error);
                 exit;
             }
-            header_url($this->tabla,'lista',SESSION_ID,'registro modificado');
+            Redirect::header_url($this->tabla,'lista',SESSION_ID,'registro modificado');
 
         }// end modifica_bd
 
         public function set_tabla(string $nombre_tabla){
             $this->tabla = $nombre_tabla;
-            $this->tabla_modelo = crear_modelo($this->tabla,$this->link);
+            $this->tabla_modelo = modelo::crear_modelo($this->tabla,$this->link);
         }
 
         /*
@@ -290,7 +294,7 @@
             $num_pagina = (int)$this->obtene_numero_pagina();
 
             if ($num_pagina > $pags){
-                header_url($this->tabla,'lista',SESSION_ID,'');
+                Redirect::header_url($this->tabla,'lista',SESSION_ID,'');
                 exit;
             }
 
@@ -328,11 +332,11 @@
 
                 if ((int)$r_consulta['n_registros'] != 0){
                     if ($registro_id < 0){
-                        header_url($this->tabla,$metodo,SESSION_ID,
+                        Redirect::header_url($this->tabla,$metodo,SESSION_ID,
                             'Error, '.$descripcion.' ya registrad@');
                         exit;
                     }
-                    header_url($this->tabla,$metodo,SESSION_ID,
+                    Redirect::header_url($this->tabla,$metodo,SESSION_ID,
                         'Error, '.$descripcion.' ya registrad@',$registro_id);
                     exit;
 
@@ -340,8 +344,5 @@
 
             }// end foreach
         }
-
-
-
 
     }// end class controlador

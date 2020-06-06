@@ -4,7 +4,14 @@
     ini_set('post_max_size', '2048M');
 	ini_set('display_errors', 1);
 	date_default_timezone_set('America/Mexico_City');
-	require_once('requires.php');
+    require_once('requires.php');
+    
+    function valida_parametro_get(string $get){
+        if (!isset($_GET[$get]) || is_null($_GET[$get]) || (string)$_GET[$get] === ''){
+            require_once('views/inicio/login.php');
+            exit;
+        }
+    }
 
     $parametros_get_requeridos = array('controlador','metodo');
 
@@ -19,10 +26,10 @@
 
         $res = $seguridad->login_bd();
         if (isset($res['error'])){
-            header_url('','','',$res['mensaje']);
+            Redirect::header_url('','','',$res['mensaje']);
             exit;
         }
-        header_url('inicio','index',$res['session_id'],'Bienvenido');
+        Redirect::header_url('inicio','index',$res['session_id'],'Bienvenido');
 
     }
 
@@ -75,7 +82,7 @@
 
         $nombre_controlador = 'controlador_'.CONTROLADOR;
         if (file_exists('controladores/'.$nombre_controlador.'.php')){
-            $controlador = crear_controlador($nombre_controlador,$link);
+            $controlador = controlador::crear_controlador($nombre_controlador,$link);
 
             if (method_exists($controlador,METODO)){
                 $acciones = $seguridad->genera_acciones_base();

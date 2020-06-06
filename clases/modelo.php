@@ -13,6 +13,10 @@
             $this->link = $link;
         }
 
+        public static function crear_modelo(string $nombre_modelo,database $link ):modelo{
+            return new $nombre_modelo($link);
+        }
+
         public function alta_bd(array $array_datos_insert){
             // blinValue Ready
             if (count($array_datos_insert) === 0){

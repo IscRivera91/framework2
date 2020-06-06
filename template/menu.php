@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
-    <a  href="<?php echo get_url('inicio','index',SESSION_ID); ?>" class="brand-link">
+    <a  href="<?php echo Redirect::get_url('inicio','index',SESSION_ID); ?>" class="brand-link">
       <img src="<?php echo RUTA_PROYECTO ?>template/adminlte3/dist/img/AdminLTELogo.png"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
@@ -61,7 +61,7 @@
                       
                       ?>
                       <li class="nav-item">
-                        <a href="<?php echo get_url($menu_navegacion[$item_menu][0],$metodo['metodo'],SESSION_ID);?>" class="nav-link">
+                        <a href="<?php echo Redirect::get_url($menu_navegacion[$item_menu][0],$metodo['metodo'],SESSION_ID);?>" class="nav-link">
                           <i class="fa<?php echo $letra ?> fa-circle nav-icon" <?php echo COLORBASE; ?>></i>
                           <p><?php echo $metodo['label']; ?></p>
                         </a>

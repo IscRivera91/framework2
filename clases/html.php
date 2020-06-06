@@ -149,7 +149,7 @@ class html
     }// end submit
 
     public function paginador(int $numero_paginas, int $pagina, string $tabla){
-        $url_base = get_url($tabla,'lista',SESSION_ID).'&pag=';
+        $url_base = Redirect::get_url($tabla,'lista',SESSION_ID).'&pag=';
         $paginador_html = '';
         $paginador_html .= "<br><nav aria-label='navigation'>";
         $paginador_html .= "    <ul class='pagination'>";
