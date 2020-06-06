@@ -4,9 +4,9 @@
 
     // config BD
 	define('DB_HOST', 'localhost');
-	define('DB_USER', 'root');
-	define('DB_PASSWORD', '12345678');
-	define('DB_NAME', 'framework2');
+	define('DB_USER', '');
+	define('DB_PASSWORD', '');
+	define('DB_NAME', '');
 
     // usuario y contra para el inicio de session
     define('DB_USER_SESSION', DB_USER);
