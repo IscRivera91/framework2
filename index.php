@@ -157,7 +157,7 @@
                     </div>
 
                 <?php } // end if (isset($_GET['mensaje'])) ?>
-               
+               <br>
                 <?php
                 $view = 'views/'.CONTROLADOR.'/'.METODO.'.php';
                 if(file_exists($view)) {

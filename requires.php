@@ -1,28 +1,26 @@
 <?php
 
-    //clases
-    require_once('clases/controlador.php');
-    require_once('clases/database.php');
-    require_once('clases/errores.php');
-    require_once('clases/html.php');
-    require_once('clases/modelo.php');
-    require_once('clases/seguridad.php');
+    spl_autoload_register(function($nombreClase){
+        if (file_exists('clases/'.$nombreClase.'.php')){
+            require_once('clases/'.$nombreClase.'.php');
+        }
+    });
 
-    // modelos
-    require_once('modelos/grupos.php');
-    require_once('modelos/menus.php');
-    require_once('modelos/metodo_grupo.php');
-    require_once('modelos/metodos.php');
-    require_once('modelos/sessiones.php');
-    require_once('modelos/usuarios.php');
+    spl_autoload_register(function($nombreModelo){
+        if (file_exists('modelos/'.$nombreModelo.'.php')){
+            require_once('modelos/'.$nombreModelo.'.php');
+        }
+    });
 
-    // controladores
-    require_once('controladores/controlador_grupos.php');
-    require_once('controladores/controlador_inicio.php');
-    require_once('controladores/controlador_menus.php');
-    require_once('controladores/controlador_metodos.php');
-    require_once('controladores/controlador_usuarios.php');
-    
-    // ayudas
-    require_once('ayudas/Redirect.php');
+    spl_autoload_register(function($nombreControlador){
+        if (file_exists('controladores/'.$nombreControlador.'.php')){
+            require_once('controladores/'.$nombreControlador.'.php');
+        }
+    });
+
+    spl_autoload_register(function($nombreAyuda){
+        if (file_exists('ayudas/'.$nombreAyuda.'.php')){
+            require_once('ayudas/'.$nombreAyuda.'.php');
+        }
+    });
     
