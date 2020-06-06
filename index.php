@@ -3,7 +3,8 @@
     ini_set('upload_max_filesize', '2048M');
     ini_set('post_max_size', '2048M');
 	ini_set('display_errors', 1);
-	date_default_timezone_set('America/Mexico_City');
+    date_default_timezone_set('America/Mexico_City');
+    require_once('config.php');
     require_once('requires.php');
     
     function valida_parametro_get(string $get){

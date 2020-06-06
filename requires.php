@@ -1,6 +1,5 @@
 <?php
 
-    require_once('config.php');
     //clases
     require_once('clases/controlador.php');
     require_once('clases/database.php');
